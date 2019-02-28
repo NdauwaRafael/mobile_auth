@@ -1,0 +1,3 @@
+rootProject.name = 'deadline_countdown'
+
+include ':app'
