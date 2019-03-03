@@ -13,6 +13,9 @@ import store from './src/Redux';
 // Navigation
 import TabBarNavigation from './src/App/tabBar/views/TabBarNavigation';
 
+
+
+
 class RootNavigation extends React.Component {
     render(){
         return(
