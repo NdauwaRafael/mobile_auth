@@ -22,17 +22,11 @@ class ProfileTabNavigation extends React.Component {
         tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor }/>
     }
 
+
     render(){
-        const { navigationState, dispatch } = this.props;
+        // const { navigationState, dispatch } = this.props;
         return (
-            <ProfileTabNavigator
-                navigation={
-                    {
-                        dispatch: dispatch,
-                        state: navigationState
-                    }
-                }
-            />
+            <ProfileTabNavigator/>
         )
     }
 }
