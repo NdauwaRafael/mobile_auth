@@ -2,9 +2,27 @@
  * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
-
+import React from 'react';
 import {AppRegistry} from 'react-native';
-import App from './App';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => App);
+// Redux
+import { Provider } from 'react-redux'
+import store from './src/Redux';
+
+// Navigation
+import TabBarNavigation from './src/App/tabBar/views/TabBarNavigation';
+
+class RootNavigation extends React.Component {
+    render(){
+        return(
+            <Provider store={store}>
+                <TabBarNavigation />
+            </Provider>
+        )
+    }
+}
+
+
+
+AppRegistry.registerComponent(appName, () => RootNavigation);
