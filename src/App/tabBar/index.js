@@ -1,20 +1,20 @@
 /**
  * Created by Raphael Karanja on 2019-03-03.
  */
-import { createBottomTabNavigator } from 'react-navigation';
+import {createAppContainer, createBottomTabNavigator} from 'react-navigation';
 
-import EventsTabNavigation from '../eventsTab';
-import ProfileTabNavigation from  '../profileTab';
-import Icon from "react-native-vector-icons/FontAwesome";
+import {EventsTabNavigator} from '../eventsTab';
+import {ProfileTabNavigator} from '../profileTab';
 import React from "react";
+import {connect} from 'react-redux';
 
 const routeConfiguration = {
-    EventsTabNavigation,
-    ProfileTabNavigation
+    Events: EventsTabNavigator,
+    Profile: ProfileTabNavigator
 }
 
 const tabBarConfiguration = {
-    navigationOptions:{
+    navigationOptions: {
         activeTintColor: 'white',
         inactiveTintColor: 'blue',
         activeBackgroundColor: 'blue',
@@ -22,4 +22,14 @@ const tabBarConfiguration = {
     }
 }
 
-export const TabBar = createBottomTabNavigator(routeConfiguration,tabBarConfiguration)
+const TabBar = createBottomTabNavigator(routeConfiguration, tabBarConfiguration);
+
+const TabBarNavigation = createAppContainer(TabBar);
+
+const mapStateToProps = (state) => {
+    return {
+        navigationState: state.tabBar,
+    }
+};
+
+export default connect(mapStateToProps)(TabBarNavigation)
