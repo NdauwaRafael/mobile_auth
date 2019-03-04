@@ -5,7 +5,7 @@ import {createAppContainer, createBottomTabNavigator} from 'react-navigation';
 
 import {EventsTabNavigator} from '../eventsTab';
 import {ProfileTabNavigator} from '../profileTab';
-import React from "react";
+import React, {Component} from "react";
 import {connect} from 'react-redux';
 
 const routeConfiguration = {
@@ -26,10 +26,18 @@ const TabBar = createBottomTabNavigator(routeConfiguration, tabBarConfiguration)
 
 const TabBarNavigation = createAppContainer(TabBar);
 
+class TabBarMain extends Component{
+    render(){
+        return(
+            <TabBarNavigation />
+        )
+}
+}
+
 const mapStateToProps = (state) => {
     return {
-        navigationState: state.tabBar,
+        event: state.event,
     }
 };
 
-export default connect(mapStateToProps)(TabBarNavigation)
+export default connect(mapStateToProps)(TabBarMain)

@@ -1,7 +1,7 @@
 /**
  * Created by Raphael Karanja on 2019-03-03.
  */
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import {createLogger} from 'redux-logger';
 import reduxImmutableStatateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';

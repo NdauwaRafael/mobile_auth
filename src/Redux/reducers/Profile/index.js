@@ -1,5 +1,5 @@
 /**
- * Created by Raphael Karanja on 2019-03-04.
+ * Created by Raphael Karanja on 2019-03-05.
  */
 import {ADDED_AN_EVENT} from '../../constants/ActionTypes';
 

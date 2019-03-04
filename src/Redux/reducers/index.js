@@ -3,8 +3,10 @@
  */
 import {combineReducers} from 'redux';
 
-import event from  './Events'
+import event from  './Events';
+import profile from './Profile'
 const rootReducer = combineReducers({
-    event
+    event,
+    profile
 });
 export default rootReducer;
