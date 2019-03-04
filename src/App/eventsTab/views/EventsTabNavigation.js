@@ -4,5 +4,5 @@
 // React
 import React from 'react'
 // Navigation
-import { EventsTabNavigator} from '../navigationConfigutation';
+import { EventsTabNavigator} from '..';
 export default EventsTabNavigator;

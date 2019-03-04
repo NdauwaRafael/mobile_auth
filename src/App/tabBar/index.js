@@ -18,9 +18,7 @@ const tabBarConfiguration = {
         activeTintColor: 'white',
         inactiveTintColor: 'blue',
         activeBackgroundColor: 'blue',
-        inactiveBackgroundColor: 'white',
-        tabBarLabel: 'Events',
-        tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor }/>
+        inactiveBackgroundColor: 'white'
     }
 }
 

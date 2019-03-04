@@ -5,8 +5,8 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import {createLogger} from 'redux-logger';
 
 // Navigation
-import { EventsTabNavigator } from '../App/eventsTab/navigationConfigutation';
-import { ProfileTabNavigator } from '../App/profileTab/navigationConfigutation';
+import { EventsTabNavigator } from '../App/eventsTab';
+import { ProfileTabNavigator } from '../App/profileTab';
 import { TabBar } from '../App/tabBar';
 
 

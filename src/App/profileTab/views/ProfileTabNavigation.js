@@ -8,7 +8,7 @@ import {createAppContainer} from "react-navigation";
 
 
 // Navigation
-import { ProfileTabNavigator} from '../navigationConfigutation'
+import { ProfileTabNavigator} from '..'
 
 // Redux
 import { connect } from 'react-redux'

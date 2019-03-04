@@ -6,6 +6,8 @@ import { createStackNavigator } from 'react-navigation';
 //SCREENS
 import ProfileDetails from './views/ProfileDetails';
 import EditProfile from  './views/ProfileEdit'
+import Icon from "react-native-vector-icons/FontAwesome";
+import React from "react";
 
 const routeConfiguration = {
     ProfileDetails: { screen: ProfileDetails },
@@ -13,7 +15,9 @@ const routeConfiguration = {
 }
 const stackNavigatorConfiguration = {
     headerMode: 'none',
-    initialRouteName: 'ProfileDetails'
+    initialRouteName: 'ProfileDetails',
+    tabBarLabel: 'Profile',
+    tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor }/>
 };
 
 
