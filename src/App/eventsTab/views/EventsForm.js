@@ -17,7 +17,7 @@ export default class EventsForm extends React.Component {
                 <Text>{ 'EventsForm Screen ' }</Text>
 
                 <TouchableOpacity
-                    onPress={ () => this.props.navigation.navigate('EventsList') }
+                    onPress={ () => this.props.navigation.back() }
                     style={{
                         padding:20,
                         borderRadius:20,
