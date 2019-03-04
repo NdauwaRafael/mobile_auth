@@ -7,6 +7,8 @@ import { createStackNavigator } from 'react-navigation';
 import Event from './views/Event';
 import EventsForm from  './views/EventsForm';
 import EventsList from  './views/EventsList';
+import Icon from "react-native-vector-icons/FontAwesome";
+import React from "react";
 
 const routeConfiguration = {
     EventsList: { screen: EventsList },
@@ -15,7 +17,9 @@ const routeConfiguration = {
 }
 const stackNavigatorConfiguration = {
     headerMode: 'none',
-    initialRouteName: 'EventsList'
+    initialRouteName: 'EventsList',
+    tabBarLabel: 'Events',
+    tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor }/>
 };
 
 
