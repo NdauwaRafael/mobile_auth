@@ -13,6 +13,17 @@ import store from './src/Redux';
 // Navigation
 import TabBarNavigation from './src/App/tabBar/views/TabBarNavigation';
 
+//Navigation Helpers
+import {
+    createReduxContainer,
+    createReactNavigationReduxMiddleware,
+    createNavigationReducer,
+} from 'react-navigation-redux-helpers';
+
+
+
+
+
 class RootNavigation extends React.Component {
     render(){
         return(

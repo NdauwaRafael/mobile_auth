@@ -9,6 +9,7 @@ import { EventsTabNavigator } from '../App/eventsTab/navigationConfigutation';
 import { ProfileTabNavigator } from '../App/profileTab/navigationConfigutation';
 import { TabBar } from '../App/tabBar/navigationConfiguration';
 
+
 // Middleware
 const middleware = () => {
     return applyMiddleware(createLogger())

@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
-
+import { NavigationActions } from 'react-navigation';
 
 class EventsTabNavigation extends React.Component {
 
