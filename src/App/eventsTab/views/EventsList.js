@@ -25,6 +25,17 @@ export default class EventsList extends React.Component {
                     }}>
                     <Text>{'Go to Event screen'}</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={ () => this.props.navigation.navigate('EventsForm') }
+                    style={{
+                        padding:20,
+                        borderRadius:20,
+                        backgroundColor:'purple',
+                        marginTop:20
+                    }}>
+                    <Text>{'Go to Event Form screen'}</Text>
+                </TouchableOpacity>
             </View>
         )
     }

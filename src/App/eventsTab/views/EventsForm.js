@@ -4,7 +4,7 @@
  */
 
 import React from 'react'
-import { View, Text } from 'react-native'
+import {View, Text, TouchableOpacity} from 'react-native'
 export default class EventsForm extends React.Component {
     render(){
         return(
@@ -15,6 +15,17 @@ export default class EventsForm extends React.Component {
                 justifyContent:'center'
             }}>
                 <Text>{ 'EventsForm Screen ' }</Text>
+
+                <TouchableOpacity
+                    onPress={ () => this.props.navigation.navigate('EventsList') }
+                    style={{
+                        padding:20,
+                        borderRadius:20,
+                        backgroundColor:'purple',
+                        marginTop:20
+                    }}>
+                    <Text>{'Go to back Event List screen'}</Text>
+                </TouchableOpacity>
             </View>
         )
     }
