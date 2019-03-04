@@ -4,16 +4,21 @@
 
 // React
 import React from 'react'
+import {createAppContainer, NavigationActions} from 'react-navigation';
+
 
 // Navigation
 import { EventsTabNavigator} from '../navigationConfigutation'
+
 
 // Redux
 import { connect } from 'react-redux'
 
 // Icon
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { NavigationActions } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+
+const EventsNavigator = createAppContainer(EventsTabNavigator);
 
 class EventsTabNavigation extends React.Component {
 
@@ -25,14 +30,7 @@ class EventsTabNavigation extends React.Component {
     render(){
         const { navigationState, dispatch } = this.props;
         return (
-            <EventsTabNavigator
-                navigation={
-                    {
-                        dispatch: dispatch,
-                        state: navigationState
-                    }
-                }
-            />
+            <EventsNavigator/>
         )
     }
 }

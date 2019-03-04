@@ -10,20 +10,14 @@ import {TabBar} from '../navigationConfiguration'
 
 //Redux
 import {connect} from 'react-redux';
+import {createAppContainer} from "react-navigation";
 
+const TabBarNavigator = createAppContainer(TabBar);
 
 class TabBarNavigation extends React.Component {
     render() {
-        const {dispatch, navigationState} = this.props
         return (
-            <TabBar
-                navigation={
-                    {
-                        dispatch: dispatch,
-                        state: navigationState,
-                    }
-                }
-            />
+            <TabBarNavigator/>
         )
     }
 }

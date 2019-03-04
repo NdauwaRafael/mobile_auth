@@ -3,7 +3,9 @@
  */
 
 // React
-import React from 'react'
+import React from 'react';
+import {createAppContainer} from "react-navigation";
+
 
 // Navigation
 import { ProfileTabNavigator} from '../navigationConfigutation'
@@ -14,6 +16,7 @@ import { connect } from 'react-redux'
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 
+const ProfileNavigator = createAppContainer(ProfileTabNavigator);
 
 class ProfileTabNavigation extends React.Component {
 
@@ -26,7 +29,7 @@ class ProfileTabNavigation extends React.Component {
     render(){
         // const { navigationState, dispatch } = this.props;
         return (
-            <ProfileTabNavigator/>
+            <ProfileNavigator/>
         )
     }
 }

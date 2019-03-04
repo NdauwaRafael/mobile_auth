@@ -12,7 +12,7 @@ const routeConfiguration = {
 }
 
 const tabBarConfiguration = {
-    tabBarOptions:{
+    navigationOptions:{
         activeTintColor: 'white',
         inactiveTintColor: 'blue',
         activeBackgroundColor: 'blue',
