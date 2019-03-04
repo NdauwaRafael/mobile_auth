@@ -1,7 +1,7 @@
 /**
  * Created by Raphael Karanja on 2019-03-03.
  */
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 //SCREENS
 import Event from './views/Event';
@@ -19,4 +19,4 @@ const stackNavigatorConfiguration = {
 };
 
 
-export const EventsTabNavigator = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
+export const EventsTabNavigator = createStackNavigator(routeConfiguration,stackNavigatorConfiguration)
