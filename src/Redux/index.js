@@ -7,7 +7,7 @@ import {createLogger} from 'redux-logger';
 // Navigation
 import { EventsTabNavigator } from '../App/eventsTab/navigationConfigutation';
 import { ProfileTabNavigator } from '../App/profileTab/navigationConfigutation';
-import { TabBar } from '../App/tabBar/navigationConfiguration';
+import { TabBar } from '../App/tabBar';
 
 
 // Middleware
