@@ -3,19 +3,22 @@
  */
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import {createLogger} from 'redux-logger';
-
-import event from './reducers/Events'
+import reduxImmutableStatateInvariant from 'redux-immutable-state-invariant';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers'
 
 
 // Middleware
 const middleware = () => {
-    return applyMiddleware(createLogger())
+    return applyMiddleware(createLogger(), thunk, reduxImmutableStatateInvariant())
 }
 
 
-export default createStore(
-    combineReducers({
-        event
-    }),
-    middleware(),
-)
+const configureStore = (initialState)=>{
+    return createStore(
+        rootReducer,
+        initialState,
+        middleware()
+    );
+};
+export default configureStore;
