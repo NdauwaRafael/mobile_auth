@@ -1,7 +1,7 @@
 /**
  * Created by Raphael Karanja on 2019-03-03.
  */
-import { createStackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
 //SCREENS
 import ProfileDetails from './views/ProfileDetails';
@@ -17,4 +17,4 @@ const stackNavigatorConfiguration = {
 };
 
 
-export const ProfileTabNavigator = createStackNavigator(routeConfiguration,stackNavigatorConfiguration)
+export const ProfileTabNavigator = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
