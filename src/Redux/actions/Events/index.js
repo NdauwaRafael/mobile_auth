@@ -6,7 +6,7 @@ import {ADDED_AN_EVENT } from "../../constants/ActionTypes";
 export const addEventSuccess = (resp) =>{
     return {
         type: ADDED_AN_EVENT,
-        events: resp
+        event: resp
     }
 }
 
