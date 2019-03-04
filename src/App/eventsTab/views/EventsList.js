@@ -4,8 +4,11 @@
  */
 
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
-export default class EventsList extends React.Component {
+import { View, Text, TouchableOpacity } from 'react-native';
+import {connect} from 'react-redux';
+import * as eventsActions from '../../../Redux/actions/Events'
+import {bindActionCreators} from "redux";
+class EventsList extends React.Component {
     render(){
         return(
             <View style={{
@@ -16,14 +19,15 @@ export default class EventsList extends React.Component {
             }}>
                 <Text>{ 'EventsList Screen ' }</Text>
                 <TouchableOpacity
-                    onPress={ () => this.props.navigation.navigate('Event') }
+                    onPress={ () => this.props.actions.addEvent('Hello World') }
                     style={{
                         padding:20,
                         borderRadius:20,
-                        backgroundColor:'purple',
-                        marginTop:20
+                        backgroundColor:'green',
+                        marginTop:20,
+                        color: 'white'
                     }}>
-                    <Text>{'Go to Event screen'}</Text>
+                    <Text>{'Add an Event'}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -40,3 +44,11 @@ export default class EventsList extends React.Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        actions: bindActionCreators(eventsActions, dispatch)
+
+    }
+
+export default connect(mapDispatchToProps)(EventsList)
