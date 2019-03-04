@@ -3,7 +3,7 @@
  */
 
 import React from 'react'
-import { View, Text } from 'react-native'
+import {View, Text, TouchableOpacity} from 'react-native'
 export default class Event extends React.Component {
     render(){
         return(
@@ -13,7 +13,17 @@ export default class Event extends React.Component {
                 alignItems:'center',
                 justifyContent:'center'
             }}>
-                <Text>{ 'Evant Screen ' }</Text>
+                <Text>{ 'Event Screen ' }</Text>
+                <TouchableOpacity
+                    onPress={ () => this.props.navigation.navigate('EventsList') }
+                    style={{
+                        padding:20,
+                        borderRadius:20,
+                        backgroundColor:'purple',
+                        marginTop:20
+                    }}>
+                    <Text>{'Go to back Event List screen'}</Text>
+                </TouchableOpacity>
             </View>
         )
     }
