@@ -3,14 +3,14 @@
  */
 import { createBottomTabNavigator } from 'react-navigation';
 
-import EventsTabNavigation from '../eventsTab/views/EventsTabNavigation';
-import ProfileTabNavigation from  '../profileTab/views/ProfileTabNavigation';
+import EventsTabNavigation from '../eventsTab';
+import ProfileTabNavigation from  '../profileTab';
 import Icon from "react-native-vector-icons/FontAwesome";
 import React from "react";
 
 const routeConfiguration = {
-    Events: { screen: EventsTabNavigation },
-    Profile: { screen: ProfileTabNavigation }
+    EventsTabNavigation,
+    ProfileTabNavigation
 }
 
 const tabBarConfiguration = {
