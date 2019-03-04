@@ -4,6 +4,8 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import {createLogger} from 'redux-logger';
 
+import event from './reducers/Events'
+
 
 // Middleware
 const middleware = () => {
@@ -12,6 +14,8 @@ const middleware = () => {
 
 
 export default createStore(
-    combineReducers({}),
+    combineReducers({
+        event
+    }),
     middleware(),
 )
