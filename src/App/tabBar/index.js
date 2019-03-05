@@ -37,10 +37,24 @@ const AuthTabBarNavigation = createAppContainer(AuthTab);
 
 
 class TabBarMain extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            isLoggedIn: false
+        }
+    }
     render(){
-        return(
-            <TabBarNavigation />
-        )
+        const {isLoggedIn} = this.state;
+        if (!isLoggedIn){
+            return (
+                <AuthTabBarNavigation />
+            )
+        } else {
+            return(
+                <TabBarNavigation />
+            )
+        }
+
 }
 }
 
