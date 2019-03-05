@@ -6,6 +6,7 @@ import React from 'react'
 import {View, Text, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {addEvent} from '../../../Redux/actions/Events'
+import {logoutUser} from '../../../Redux/actions/Auth'
 import {bindActionCreators} from "redux";
 
 class EventsList extends React.Component {
@@ -36,6 +37,18 @@ class EventsList extends React.Component {
                 </TouchableOpacity>
 
                 <TouchableOpacity
+                    onPress={() => this.props.logoutUser()}
+                    style={{
+                        padding: 20,
+                        borderRadius: 20,
+                        backgroundColor: 'red',
+                        marginTop: 20,
+
+                    }}>
+                    <Text style={{color: 'white'}}>{'Logout User'}</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('EventsForm')}
                     style={{
                         padding: 20,
@@ -59,6 +72,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addEvent: bindActionCreators(addEvent, dispatch)
+        logoutUser: bindActionCreators(logoutUser, dispatch)
     }
 }
 
