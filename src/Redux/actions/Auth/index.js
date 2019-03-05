@@ -10,4 +10,19 @@ import {
     FETCH_USER_FAILED,
     LOGOUT_USER_SUCCESS,
     LOGOUT_USER_FAILED
-}   from '../../constants/ActionTypes'
+}   from '../../constants/ActionTypes';
+
+export const loginUserSuccess = (resp)=>{
+    return {
+        type: LOGIN_USER_SUCCESS,
+        user: resp
+    }
+};
+
+export const loginUser = ({email, password})=>dispatch=>{
+    return dispatch(loginUserSuccess({
+        id: 'user#123',
+        name: 'John Doe',
+        email: 'jdoe@gmail.com'
+    }));
+}
