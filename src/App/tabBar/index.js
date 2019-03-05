@@ -44,7 +44,7 @@ class TabBarMain extends Component{
         }
     }
     render(){
-        const {isLoggedIn} = this.state;
+        const {isLoggedIn} = this.props.auth;
         if (!isLoggedIn){
             return (
                 <AuthTabBarNavigation />
@@ -60,7 +60,7 @@ class TabBarMain extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        event: state.event,
+        auth: state.auth,
     }
 };
 
