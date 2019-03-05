@@ -4,8 +4,10 @@
 import {combineReducers} from 'redux';
 
 import event from  './Events';
-import profile from './Profile'
+import profile from './Profile';
+import auth from './Auth'
 const rootReducer = combineReducers({
+    auth,
     event,
     profile
 });

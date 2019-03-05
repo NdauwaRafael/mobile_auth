@@ -7,7 +7,8 @@ import reduxImmutableStatateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 // Reducers
 import event from './reducers/Events';
-import profile from './reducers/Profile'
+import profile from './reducers/Profile';
+import auth from './reducers/Auth'
 
 
 
@@ -19,6 +20,7 @@ const middleware = () => {
 
 export default createStore(
     combineReducers({
+        auth,
         event,
         profile
     }),
