@@ -30,9 +30,9 @@ class EventsList extends React.Component {
                         borderRadius: 20,
                         backgroundColor: 'green',
                         marginTop: 20,
-                        color: 'white'
+
                     }}>
-                    <Text>{'Add an Event'}</Text>
+                    <Text style={{color: 'white'}}>{'Add an Event'}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -43,10 +43,10 @@ class EventsList extends React.Component {
                         backgroundColor: 'purple',
                         marginTop: 20
                     }}>
-                    <Text>{'Go to Event Form screen'}</Text>
+                    <Text style={{color: 'white'}}>{'Go to Event Form screen'}</Text>
                 </TouchableOpacity>
 
-                <Text>{this.props.event}</Text>
+                <Text >{this.props.event}</Text>
             </View>
         )
     }
