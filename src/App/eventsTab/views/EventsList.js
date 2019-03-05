@@ -46,7 +46,7 @@ class EventsList extends React.Component {
                     <Text style={{color: 'white'}}>{'Go to Event Form screen'}</Text>
                 </TouchableOpacity>
 
-                <Text >{this.props.event}</Text>
+                <Text style={{color: 'white', marginTop: 20}}>{this.props.event}</Text>
             </View>
         )
     }
