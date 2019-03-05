@@ -19,6 +19,12 @@ export const loginUserSuccess = (resp)=>{
     }
 };
 
+export const logoutUserSuccess = ()=>{
+    return {
+        type: LOGOUT_USER_SUCCESS
+    }
+}
+
 export const loginUser = ({email, password})=>dispatch=>{
     return dispatch(loginUserSuccess({
         id: 'user#123',
@@ -33,4 +39,8 @@ export const checkLoginState = ()=>dispatch=>{
         name: 'John Doe',
         email: 'jdoe@gmail.com'
     }));
+};
+
+export const logoutUser = ()=>dispatch=>{
+    return dispatch(logoutUserSuccess())
 }
