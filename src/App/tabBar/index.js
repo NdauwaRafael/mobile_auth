@@ -8,10 +8,22 @@ import {ProfileTabNavigator} from '../profileTab';
 import {AuthTabNavigator} from "../authTab";
 import React, {Component} from "react";
 import {connect} from 'react-redux';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const routeConfiguration = {
-    Events: EventsTabNavigator,
-    Profile: ProfileTabNavigator
+    Events: {
+        screen: EventsTabNavigator,
+        navigationOptions: {
+            tabBarIcon: ({tintColor}) => <Icon size={20} name={'calendar'} color={tintColor}/>
+        }
+    },
+
+    Profile: {
+        screen: ProfileTabNavigator,
+        navigationOptions: {
+            tabBarIcon: ({tintColor}) => <Icon size={20} name={'user'} color={tintColor}/>
+        }
+    }
 }
 
 const tabBarConfiguration = {
@@ -29,33 +41,37 @@ const TabBarNavigation = createAppContainer(TabBar);
 
 //auth
 const authRouteConfiguration = {
-    Auth: AuthTabNavigator
+    Auth: {screen: AuthTabNavigator, 
+    navigationOptions: {
+        tabBarIcon: ({tintColor}) => <Icon size={20} name={'users'} color={tintColor}/>
+    }}
 }
 
 const AuthTab = createBottomTabNavigator(authRouteConfiguration, tabBarConfiguration);
 const AuthTabBarNavigation = createAppContainer(AuthTab);
 
 
-class TabBarMain extends Component{
-    constructor(props){
+class TabBarMain extends Component {
+    constructor(props) {
         super(props)
         this.state = {
             isLoggedIn: false
         }
     }
-    render(){
+
+    render() {
         const {isLoggedIn} = this.props.auth;
-        if (!isLoggedIn){
+        if (!isLoggedIn) {
             return (
-                <AuthTabBarNavigation />
+                <AuthTabBarNavigation/>
             )
         } else {
-            return(
-                <TabBarNavigation />
+            return (
+                <TabBarNavigation/>
             )
         }
 
-}
+    }
 }
 
 const mapStateToProps = (state) => {
