@@ -71,7 +71,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        addEvent: bindActionCreators(addEvent, dispatch)
+        addEvent: bindActionCreators(addEvent, dispatch),
         logoutUser: bindActionCreators(logoutUser, dispatch)
     }
 }
