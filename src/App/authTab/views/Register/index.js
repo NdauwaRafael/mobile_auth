@@ -8,7 +8,9 @@ class Register extends Component{
     render() {
         return(
             <Container>
+                <Content>
 
+                </Content>
             </Container>
         );
     }
