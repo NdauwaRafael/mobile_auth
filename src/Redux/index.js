@@ -3,7 +3,8 @@
  */
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import {createLogger} from 'redux-logger';
-
+import reduxImmutableStatateInvariant from 'redux-immutable-state-invariant';
+import thunk from 'redux-thunk';
 // Reducers
 import event from './reducers/Events';
 import profile from './reducers/Profile'
@@ -12,7 +13,7 @@ import profile from './reducers/Profile'
 
 // Middleware
 const middleware = () => {
-    return applyMiddleware(createLogger())
+    return applyMiddleware(createLogger(), thunk, reduxImmutableStatateInvariant())
 }
 
 

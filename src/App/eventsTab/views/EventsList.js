@@ -5,10 +5,15 @@
 import React from 'react'
 import {View, Text, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import * as eventsActions from '../../../Redux/actions/Events'
+import {addEvent} from '../../../Redux/actions/Events'
 import {bindActionCreators} from "redux";
 
 class EventsList extends React.Component {
+
+    componentDidMount(): void {
+        console.log(this.props, 'props')
+    }
+
     render() {
         return (
             <View style={{
@@ -19,7 +24,7 @@ class EventsList extends React.Component {
             }}>
                 <Text>{'EventsList Screen '}</Text>
                 <TouchableOpacity
-                    onPress={() => this.props.actions.addEvent('Hello World')}
+                    onPress={() => this.props.addEvent('Hello World')}
                     style={{
                         padding: 20,
                         borderRadius: 20,
@@ -48,12 +53,12 @@ class EventsList extends React.Component {
 }
 const mapStateToProps = (state) => {
     return {
-        event: state.event
+        event: state.event.event
     }
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        actions: bindActionCreators(eventsActions, dispatch)
+        addEvent: bindActionCreators(addEvent, dispatch)
     }
 }
 

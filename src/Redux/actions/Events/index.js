@@ -11,6 +11,5 @@ export const addEventSuccess = (resp) =>{
 }
 
 export const addEvent = (event)=>dispatch=> {
-console.log(event)
     return dispatch(addEventSuccess(event));
 }
