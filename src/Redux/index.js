@@ -5,8 +5,8 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import {createLogger} from 'redux-logger';
 
 // Reducers
-import Events from './reducers/Events';
-import Profile from './reducers/Profile'
+import event from './reducers/Events';
+import profile from './reducers/Profile'
 
 
 
@@ -18,8 +18,8 @@ const middleware = () => {
 
 export default createStore(
     combineReducers({
-        Events,
-        Profile
+        event,
+        profile
     }),
     middleware(),
 )
