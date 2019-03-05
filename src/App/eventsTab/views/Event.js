@@ -15,7 +15,7 @@ export default class Event extends React.Component {
             }}>
                 <Text>{ 'Event Screen ' }</Text>
                 <TouchableOpacity
-                    onPress={ () => this.props.navigation.back()}
+                    onPress={ () => this.props.navigation.goBack()}
                     style={{
                         padding:20,
                         borderRadius:20,
