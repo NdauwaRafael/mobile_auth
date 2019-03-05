@@ -26,8 +26,7 @@ class Login extends Component {
 
     render() {
         return (
-            <Container >
-                <Content style={styles.container}>
+            <Container style={styles.container}>
                     <Form>
                         <View>
                             <Text>{this.props.loginError}</Text>
@@ -67,7 +66,6 @@ class Login extends Component {
                             <Text style={{color: '#fff'}}>Sign Up!</Text>
                         </Button>
                     </Form>
-                </Content>
             </Container>
         );
     }
