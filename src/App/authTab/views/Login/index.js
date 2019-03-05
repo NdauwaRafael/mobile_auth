@@ -26,8 +26,8 @@ class Login extends Component {
 
     render() {
         return (
-            <Container style={styles.container}>
-                <Content>
+            <Container >
+                <Content style={styles.container}>
                     <Form>
                         <View>
                             <Text>{this.props.loginError}</Text>
