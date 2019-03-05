@@ -5,6 +5,7 @@ import {createAppContainer, createBottomTabNavigator} from 'react-navigation';
 
 import {EventsTabNavigator} from '../eventsTab';
 import {ProfileTabNavigator} from '../profileTab';
+import {AuthTabNavigator} from "../authTab";
 import React, {Component} from "react";
 import {connect} from 'react-redux';
 
@@ -20,11 +21,20 @@ const tabBarConfiguration = {
         activeBackgroundColor: 'blue',
         inactiveBackgroundColor: 'white'
     }
-}
+};
 
 const TabBar = createBottomTabNavigator(routeConfiguration, tabBarConfiguration);
 
 const TabBarNavigation = createAppContainer(TabBar);
+
+//auth
+const authRouteConfiguration = {
+    Auth: AuthTabNavigator
+}
+
+const AuthTab = createBottomTabNavigator(authRouteConfiguration, tabBarConfiguration);
+const AuthTabBarNavigation = createAppContainer(AuthTab);
+
 
 class TabBarMain extends Component{
     render(){
