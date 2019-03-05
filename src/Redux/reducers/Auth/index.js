@@ -20,6 +20,8 @@ export default (state=initialState, action) => {
     switch (action.type) {
         case LOGIN_USER_SUCCESS :
             return {...state, isLoggedIn: true, user: action.user}
+        case LOGOUT_USER_SUCCESS :
+            return {...state, isLoggedIn: false, user: {}}
         default:
             return state;
     }
