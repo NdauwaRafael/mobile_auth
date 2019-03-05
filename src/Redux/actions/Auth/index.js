@@ -26,3 +26,11 @@ export const loginUser = ({email, password})=>dispatch=>{
         email: 'jdoe@gmail.com'
     }));
 }
+
+export const checkLoginState = ({email, password})=>dispatch=>{
+    return dispatch(loginUserSuccess({
+        id: 'user#123',
+        name: 'John Doe',
+        email: 'jdoe@gmail.com'
+    }));
+}
