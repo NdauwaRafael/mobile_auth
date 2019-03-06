@@ -14,10 +14,19 @@ import {
 
 import {authRef} from '../../constants/utils/auth'
 
+
 export const loginUserSuccess = (resp)=>{
     return {
         type: LOGIN_USER_SUCCESS,
         user: resp
+    }
+};
+
+
+export const loginUserFail = (resp)=>{
+    return {
+        type: FETCH_USER_FAILED,
+        error: resp
     }
 };
 
@@ -28,19 +37,24 @@ export const logoutUserSuccess = ()=>{
 }
 
 export const loginUser = ({email, password})=>dispatch=>{
-    return dispatch(loginUserSuccess({
-        id: 'user#123',
-        name: 'John Doe',
-        email: 'jdoe@gmail.com'
-    }));
+    authRef.signInWithEmailAndPassword(email, password)
+        .then((resp) => {
+            return dispatch(loginUserSuccess(resp));
+        })
+        .catch((error) => {
+            return dispatch(loginUserFail(error.toString()))
+        });
 }
 
 export const checkLoginState = ()=>dispatch=>{
-    return dispatch(loginUserSuccess({
-        id: 'user#123',
-        name: 'John Doe',
-        email: 'jdoe@gmail.com'
-    }));
+    authRef.onAuthStateChanged(user => {
+        if (user) {
+            return dispatch(loginUserSuccess(user));
+        } else {
+            dispatch(loginUserFail('logged out'))
+        }
+    });
+
 };
 
 export const logoutUser = ()=>dispatch=>{
