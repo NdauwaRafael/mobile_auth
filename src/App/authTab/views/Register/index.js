@@ -4,6 +4,10 @@
 import React, {Component} from 'react';
 import {Container, Header, Form, Footer, Title, View, Item, Label, Input, Text, Button} from 'native-base';
 import {StyleSheet} from "react-native";
+import {connect} from 'react-redux';
+import {createUser} from '../../../../Redux/actions/Auth'
+import {bindActionCreators} from "redux/es/redux";
+
 
 class Register extends Component {
     constructor(props) {
@@ -33,7 +37,7 @@ class Register extends Component {
             errors.password = ''
         }
 
-        if (confirmPassword !== password ) {
+        if (confirmPassword !== password) {
             errors.confirmPassword = 'Passwords do not match.';
             isValid = false;
         } else {
@@ -53,10 +57,12 @@ class Register extends Component {
         return isValid;
     };
 
-    register(){
-        if (!this.userIsValid()){
+    register() {
+        if (!this.userIsValid()) {
             return;
         }
+        let user = {email: this.state.email, password: this.state.password}
+        this.props.createUser(user);
     }
 
     render() {
@@ -125,4 +131,10 @@ const styles = StyleSheet.create({
         fontSize: 10
     }
 });
-export default Register;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createUser: bindActionCreators(createUser, dispatch);
+    }
+};
+export default connect(mapDispatchToProps)(Register);
