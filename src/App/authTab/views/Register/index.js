@@ -12,11 +12,7 @@ class Register extends Component {
             email: '',
             password: '',
             confirmPassword: '',
-            errors: {
-                email: '',
-                password: '',
-                confirmPassword: ''
-            }
+            errors: {}
         }
         this.register = this.register.bind(this);
     };
@@ -58,7 +54,7 @@ class Register extends Component {
     };
 
     register(){
-        if (!this.userIsValid){
+        if (!this.userIsValid()){
             return;
         }
     }
