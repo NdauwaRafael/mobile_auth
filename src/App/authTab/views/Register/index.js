@@ -18,6 +18,11 @@ class Register extends Component {
                 confirmPassword: ''
             }
         }
+        this.register = this.register.bind(this);
+    };
+
+    register(){
+
     }
 
     render() {
