@@ -34,7 +34,7 @@ export const logoutUserSuccess = ()=>{
     return {
         type: LOGOUT_USER_SUCCESS
     }
-}
+};
 
 export const loginUser = ({email, password})=>dispatch=>{
     authRef.signInWithEmailAndPassword(email, password)
@@ -59,4 +59,20 @@ export const checkLoginState = ()=>dispatch=>{
 
 export const logoutUser = ()=>dispatch=>{
     return dispatch(logoutUserSuccess())
-}
+};
+
+//CREATE USER
+
+export const createUserSuccess = (resp)=>{
+    return {
+        type: CREATE_USER_SUCCESS ,
+        user: resp
+    }
+};
+
+export const createUserFailed = (resp)=>{
+    return {
+        type: CREATE_USER_FAILED,
+        error: resp
+    }
+};
