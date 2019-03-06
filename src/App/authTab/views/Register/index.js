@@ -57,7 +57,7 @@ class Register extends Component {
                                 autoCorrect={false}
                                 autoCapitalize="none"/>
                         </Item>
-                        <Text style={styles.errorMessage}>{errors.password} </Text>
+                        <Text style={styles.errorMessage}>{errors.confirmPassword} </Text>
                     </View>
 
                     <Button
