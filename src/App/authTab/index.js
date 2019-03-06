@@ -12,10 +12,12 @@ import Icon from "react-native-vector-icons/FontAwesome";
 //SCREENS
 import Login from './views/Login';
 import Register from './views/Register';
+import UpdateDetails from './views/UpdateUser';
 
 const routeConfiguration = {
     Login: {screen: Login},
-    Register: {screen: Register}
+    Register: {screen: Register},
+    UpdateDetails: {screen: UpdateDetails}
 }
 
 const stackNavigatorConfiguration = {
