@@ -21,8 +21,46 @@ class Register extends Component {
         this.register = this.register.bind(this);
     };
 
-    register(){
+    emailIsValid(email) {
+        const emailRegex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i;
+        return emailRegex.test(String(email).toLowerCase());
+    }
 
+    userIsValid() {
+        let isValid = true;
+        let {email, password, errors, confirmPassword} = this.state;
+
+        if (password.length < 6) {
+            errors.password = 'Password is too short. Password should be atleast 6 characters long';
+            isValid = false;
+        } else {
+            errors.password = ''
+        }
+
+        if (confirmPassword !== password ) {
+            errors.confirmPassword = 'Passwords do not match.';
+            isValid = false;
+        } else {
+            errors.confirmPassword = ''
+        }
+
+
+        if (!this.emailIsValid(email)) {
+            errors.email = 'Enter a valid Email';
+            isValid = false;
+        } else {
+            errors.email = ''
+        }
+
+        this.setState({errors});
+
+        return isValid;
+    };
+
+    register(){
+        if (!this.userIsValid){
+            return;
+        }
     }
 
     render() {
