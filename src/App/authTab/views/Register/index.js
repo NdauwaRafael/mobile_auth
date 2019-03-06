@@ -3,9 +3,10 @@
  */
 import React, {Component} from 'react';
 import {Container, Header, Form, Footer, Title, View, Item, Label, Input, Text, Button} from 'native-base';
+import {StyleSheet} from "react-native";
 
-class Register extends Component{
-    constructor(props){
+class Register extends Component {
+    constructor(props) {
         super(props)
         this.state = {
             email: '',
@@ -18,10 +19,11 @@ class Register extends Component{
             }
         }
     }
+
     render() {
         const {errors} = this.state;
-        return(
-            <Container>
+        return (
+            <Container style={styles.container}>
                 <Form>
                     <View>
                         <Item floatingLabel>
@@ -72,4 +74,16 @@ class Register extends Component{
     }
 }
 
+const styles = StyleSheet.create({
+    container: {
+        padding: 10,
+        flex: 1,
+        backgroundColor: "#fff",
+        justifyContent: "center"
+    },
+    errorMessage: {
+        color: 'red',
+        fontSize: 10
+    }
+});
 export default Register;
