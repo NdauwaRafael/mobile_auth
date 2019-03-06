@@ -12,6 +12,8 @@ import {
     LOGOUT_USER_FAILED
 }   from '../../constants/ActionTypes';
 
+import {authRef} from '../../constants/utils/auth'
+
 export const loginUserSuccess = (resp)=>{
     return {
         type: LOGIN_USER_SUCCESS,
