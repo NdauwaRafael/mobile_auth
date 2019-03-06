@@ -20,6 +20,7 @@ class Login extends Component {
             }
         };
         this.login = this.login.bind(this);
+        this.signUp = this.signUp.bind(this);
     };
 
     emailIsValid(email) {
@@ -61,7 +62,7 @@ class Login extends Component {
     }
 
     signUp() {
-
+        this.props.navigation.navigate('Register');
     }
 
 
