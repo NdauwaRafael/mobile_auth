@@ -20,13 +20,13 @@ let initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case LOGIN_USER_SUCCESS :
-            return {...state, isLoggedIn: true, user: action.user}
+            return {...state, isLoggedIn: true, user: action.user};
         case LOGOUT_USER_SUCCESS :
-            return {...state, isLoggedIn: false, user: {}}
+            return {...state, isLoggedIn: false, user: {}};
         case CREATE_USER_SUCCESS :
-            return {...state}
+            return {...state, user: action.user};
         case CREATE_USER_FAILED :
-            return {...state, createUserError: action.error}
+            return {...state, createUserError: action.error};
         default:
             return state;
     }

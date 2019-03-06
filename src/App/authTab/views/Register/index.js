@@ -69,6 +69,11 @@ class Register extends Component {
         const {errors} = this.state;
         return (
             <Container style={styles.container}>
+                {/*<View>*/}
+                    {/*<Text>*/}
+                        {/*{this.props.createUserError}*/}
+                    {/*</Text>*/}
+                {/*</View>*/}
                 <Form>
                     <View>
                         <Item floatingLabel>
@@ -138,9 +143,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const mapStateToProps = (state)=>{
+function mapStateToProps({auth}){
     return {
-        registerError: state.createUserError
+        createUserError: auth.createUserError
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

@@ -41,12 +41,10 @@ const TabBarNavigation = createAppContainer(TabBar);
 
 //auth
 const authRouteConfiguration = {
-    Auth: {
-        screen: AuthTabNavigator,
-        navigationOptions: {
-            tabBarIcon: ({tintColor}) => <Icon size={20} name={'users'} color={tintColor}/>
-        }
-    }
+    Auth: {screen: AuthTabNavigator,
+    navigationOptions: {
+        tabBarIcon: ({tintColor}) => <Icon size={20} name={'users'} color={tintColor}/>
+    }}
 }
 
 const AuthTab = createBottomTabNavigator(authRouteConfiguration, tabBarConfiguration);

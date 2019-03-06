@@ -9,11 +9,7 @@ import {name as appName} from './app.json';
 // Redux
 import { Provider } from 'react-redux'
 import store from './src/Redux';
-import {checkLoginState} from "./src/Redux/actions/Auth";
-
-store.dispatch(checkLoginState());
-
-
+store.dispatch()
 // Navigation
 import TabBarNavigation from './src/App/tabBar';
 
