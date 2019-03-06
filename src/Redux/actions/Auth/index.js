@@ -83,5 +83,6 @@ export const createUser = ({email, password})=>dispatch=>{
             return dispatch(createUserSuccess(resp));
         })
         .catch((error) => {
-            dispatch(createUserFailed(error.toString()))});
+            dispatch(createUserFailed(error.toString()));
+        });
 }

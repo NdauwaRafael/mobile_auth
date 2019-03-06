@@ -134,7 +134,13 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createUser: bindActionCreators(createUser, dispatch);
+        createUser: bindActionCreators(createUser, dispatch)
     }
 };
-export default connect(mapDispatchToProps)(Register);
+
+const mapStateToProps = (state)=>{
+    return {
+        registerError: state.createUserError
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
