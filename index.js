@@ -9,7 +9,9 @@ import {name as appName} from './app.json';
 // Redux
 import { Provider } from 'react-redux'
 import store from './src/Redux';
-store.dispatch()
+
+
+
 // Navigation
 import TabBarNavigation from './src/App/tabBar';
 

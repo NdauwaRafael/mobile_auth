@@ -25,7 +25,7 @@ export const loginUserSuccess = (resp)=>{
 
 export const loginUserFail = (resp)=>{
     return {
-        type: FETCH_USER_FAILED,
+        type: LOGIN_USER_FAILED,
         error: resp
     }
 };
