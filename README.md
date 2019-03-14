@@ -1,6 +1,6 @@
 # Mobile Auth
 > A React Native (With Redux) Firebase/Firestore Auth Template.
 
-#### Mobile Deadine is a simple application built with React Native and uses Firebase auth. The application allows one to create a list of activities and their deadlines which will display with a timer until the event elapses.
+#### Mobile Auth is a mobile application authentication template inherited from the project `Event Deadline`. The auth template is geared to assisting one in getting started while setting up a react native authentication project.
 
 More description coming soon...
